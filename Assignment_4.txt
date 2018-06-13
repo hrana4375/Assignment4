@@ -1,0 +1,113 @@
+Q1 - Area of Rectangle.
+
+Sol-
+
+class Rectangle {
+  int length;
+  int width;
+
+  Rectangle(int a,int b)
+  {
+    length=a;
+    width=b;
+  }
+  public void calculateArea() {
+    System.out.println(length*width);
+  }
+  public static void main(String args[]) {
+    Rectangle ob=new Rectangle(10,20);
+    ob.calculateArea();
+  }
+}
+
+Q2 - Display Complex Number.
+
+Sol-
+
+class Complex {
+  int real;
+  int img;
+
+  Complex(int a,int b) {
+    real=a;
+    img=b;
+  }
+  public void display() {
+    System.out.println(real+"+"+img+"i");
+  }
+
+  public static void main(String args[]) {
+    Complex ob=new Complex(2,5);
+    ob.display();
+  }
+}
+
+Q3 - Find Second Largest in Array.
+
+Sol-
+
+import java.util.Scanner;
+class Second {
+  public static void main(String args[]) {
+    int large,sec_large,count=0,temp;
+    Scanner ob=new Scanner(System.in);
+    System.out.print("Enter the no. elements:");
+    int n=ob.nextInt();
+    int arr[]=new int[n];
+    System.out.print("Enter the elements:");
+      for(int i=0;i<arr.length;i++)
+          arr[i]=ob.nextInt();
+      large=arr[0];
+      for(int j=1;j<n;j++)
+        {
+          if(arr[j]>large)
+          {
+            large=arr[j];
+            count=j;
+          }
+        }
+      temp=arr[count];
+      arr[count]=arr[n-1];
+      arr[n-1]=temp;
+      sec_large=arr[0];
+      for(int j=0;j<n-1;j++)
+      {
+        if(arr[j]>sec_large)
+          sec_large=arr[j];
+      }
+      System.out.print("The Second Largest Element in the Array is:");
+      System.out.print(sec_large);
+    }
+}
+
+Q4 - Arrange Elements in Waveform.
+
+Sol-
+
+import java.util.Scanner;
+class Waveform {
+  public static void main(String args[]) {
+    int temp;
+    Scanner ob=new Scanner(System.in);
+    System.out.print("Enter the no. elements:");
+    int n=ob.nextInt();
+    int arr[]=new int[n];
+    System.out.print("Enter the elements:");
+      for(int i=0;i<arr.length;i++)
+          arr[i]=ob.nextInt();
+    int j=1;
+    for(int i=0;i<n;i+=2)
+      {
+        for( ;j<n; )
+          {
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            break;
+          }
+        j+=2;
+      }
+      for(int i=0;i<n;i++)
+       System.out.print(arr[i]+" ");
+    }
+}
